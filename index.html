@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <html lang="en">
+        <meta charset="utf-8"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        <link rel="stylesheet" href="glacier_map.css">
+        <!-- <link rel="shortcut icon" type="image/x-icon" href="{% static '/global/image/favicon.png' %}"/> -->
+        <script charset="utf-8" src="d3.v4.min.js"></script>
+        <script src="d3-tip.min.js"></script>
+        <title>Glacier Thickness</title>
+    </head>
+    <body>
+      <!-- <div class="scatter-dash"> -->
+        <div class="ui center aligned vertically padded grid container">
+          <div class="sixteen wide column">
+            <h2 class="ui header">Glacier Ice thickness with Glathida and
+              <a href="https://oggm.org/" target="_blank">OGGM</a></h2>
+          </div>
+          <div class="twelve wide column svg-scatter"><svg></svg></div>
+
+          <div class="four wide column">
+              <div class="row header_map"></div>
+              <div class="glacier_map" style="position: relative;"></div>
+            </div>
+
+            <div class="sixteen wide column choice">
+              <div class="ui middle aligned two column centered grid">
+                <div class="ui form">
+                  <div class="fields">
+                    <div class="field">
+                      <label for="id_x_names">X:</label>
+                      <select name="x_names" id="id_x_names">
+                        <option value="slope">Slope Angle [rad]</option>
+                        <option value="topo">Altitude [m]</option>
+                        <option value="dis_from_border" selected="">Distance from the border [m]</option>
+                        <option value="catchment_area">Catchment Area [m^2]</option>
+                        <option value="mb_catchment">Catchment Area based Mass Balance</option>
+                        <option value="mb_altitude">Linear Mass Balance</option>
+                      </select>
+                      </div>
+                    <!-- <div class="field">
+                    {{ form.y_names.label_tag }}
+                    {% render_field form.y_names %}
+                    </div> -->
+                    <div class="field">
+                      <label for="id_data">Glacier:</label>
+                      <select name="data" id="id_data">
+                          <option value="RGI60-01.16195">RGI60-01.16195</option>
+                          <option value="RGI60-01.16835">RGI60-01.16835</option>
+                          <option value="RGI60-03.01632">RGI60-03.01632</option>
+                          <option value="RGI60-03.04487">RGI60-03.04487</option>
+                          <option value="RGI60-03.04538">RGI60-03.04538</option>
+                          <option value="RGI60-04.06981">RGI60-04.06981</option>
+                          <option value="RGI60-04.07131">RGI60-04.07131</option>
+                          <option value="RGI60-05.00524">RGI60-05.00524</option>
+                          <option value="RGI60-05.07772">RGI60-05.07772</option>
+                          <option value="RGI60-11.00590">RGI60-11.00590</option>
+                          <option value="RGI60-11.00603">RGI60-11.00603</option>
+                          <option value="RGI60-11.00746">RGI60-11.00746</option>
+                          <option value="RGI60-11.00846">RGI60-11.00846</option>
+                          <option value="RGI60-11.00950">RGI60-11.00950</option>
+                          <option value="RGI60-11.01296">RGI60-11.01296</option>
+                          <option value="RGI60-11.01473">RGI60-11.01473</option>
+                          <option value="RGI60-11.01813">RGI60-11.01813</option>
+                          <option value="RGI60-11.01962">RGI60-11.01962</option>
+                          <option value="RGI60-11.02249">RGI60-11.02249</option>
+                          <option value="RGI60-11.02600">RGI60-11.02600</option>
+                          <option value="RGI60-11.02773">RGI60-11.02773</option>
+                          <option value="RGI60-12.00960">RGI60-12.00960</option>
+                          <option value="RGI60-12.01132">RGI60-12.01132</option>
+                          <option value="RGI60-13.08055">RGI60-13.08055</option>
+                          <option value="RGI60-13.45334">RGI60-13.45334</option>
+                          <option value="RGI60-13.45335">RGI60-13.45335</option>
+                          <option value="RGI60-17.13672">RGI60-17.13672</option>
+                          <option value="RGI60-17.13785">RGI60-17.13785</option>
+                          <option value="RGI60-17.14088">RGI60-17.14088</option>
+                          <option value="RGI60-17.14647">RGI60-17.14647</option>
+                      </select>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- </div> -->
+    </body>
+    <script charset="utf-8" src="glathida_d3.js"></script>
+    <link rel="stylesheet" href="glathida.css">
+</html>

@@ -1,0 +1,24 @@
+.plot {
+    position: absolute;
+    top: 0px;
+    left:0px;
+        }
+/* #canvas_plot {
+    z-index: 1;
+}
+
+#scatter_map {
+    z-index: 2;
+} */
+
+.map.over {
+    fill: #DD2C00  ;
+    r: 5;
+}
+
+.sct.over {
+    fill: #DD2C00  ;
+    stroke: #DD2C00  ;
+    fill-opacity: 1.0;
+    r: 8;
+}
